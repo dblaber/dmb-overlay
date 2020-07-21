@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<repositories version="1.0">
+    <repo priority="100" quality="experimental" status="unofficial">
+        <name>dmb-overlay</name>
+        <description lang="en">Overlay for dmb's Work</description>
+        <homepage>https://github.com/dblaber/dmb-overlay</homepage>
+        <owner>
+            <name>dmb</name>
+            <email>dmbtech@gmail.com</email>
+        </owner>
+        <source type="git">https://github.com/dblaber/dmb-overlay.git</source>
+        <source type="git">git://github.com/dblaber/dmb-overlay.git</source>
+        <source type="git">git@github.com:dblaber/dmb-overlay.git</source>
+        <feed>https://github.com/dblaber/dmb-overlay/commits/master.atom</feed>
+    </repo>
+</repositories>
