@@ -96,9 +96,9 @@ pkg_setup() {
 	openjdk_check_requirements
 	java-vm-2_pkg_setup
 
-	JAVA_PKG_WANT_BUILD_VM="openjdk-15 openjdk-bin-15"
-	JAVA_PKG_WANT_SOURCE="15"
-	JAVA_PKG_WANT_TARGET="15"
+	JAVA_PKG_WANT_BUILD_VM="openjdk-${SLOT} openjdk-bin-${SLOT}"
+	JAVA_PKG_WANT_SOURCE="${SLOT}"
+	JAVA_PKG_WANT_TARGET="${SLOT}"
 
 	# The nastiness below is necessary while the gentoo-vm USE flag is
 	# masked. First we call java-pkg-2_pkg_setup if it looks like the
