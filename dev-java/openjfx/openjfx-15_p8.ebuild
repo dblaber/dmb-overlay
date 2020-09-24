@@ -5,20 +5,19 @@ EAPI=6
 
 MY_PV="${PV/_p/+}"
 SLOT="${MY_PV%%[.+]*}"
-EGRADLE_VER="4.10.3"
+EGRADLE_VER="6.6.1"
 
 inherit flag-o-matic java-pkg-2 multiprocessing
 
 DESCRIPTION="Java OpenJFX client application platform"
 HOMEPAGE="https://openjfx.io"
-#https://hg.openjdk.java.net/${PN}/${SLOT}-dev/rt/archive/${MY_PV}.tar.bz2
 SRC_URI=" https://github.com/openjdk/jfx/archive/${MY_PV}.tar.gz -> ${P}.tar.gz
 	https://downloads.gradle.org/distributions/gradle-${EGRADLE_VER}-bin.zip
-	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-sandbox/7.1.0/lucene-sandbox-7.1.0.jar
-	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-grouping/7.1.0/lucene-grouping-7.1.0.jar
-	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queryparser/7.1.0/lucene-queryparser-7.1.0.jar
-	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queries/7.1.0/lucene-queries-7.1.0.jar
-	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-core/7.1.0/lucene-core-7.1.0.jar
+	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-sandbox/7.7.2/lucene-sandbox-7.7.2.jar
+	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-grouping/7.7.2/lucene-grouping-7.7.2.jar
+	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queryparser/7.7.2/lucene-queryparser-7.7.2.jar
+	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queries/7.7.2/lucene-queries-7.7.2.jar
+	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-core/7.7.2/lucene-core-7.7.2.jar
 	https://repo.maven.apache.org/maven2/org/antlr/gunit/3.5.2/gunit-3.5.2.jar
 	https://repo1.maven.org/maven2/org/antlr/antlr4/4.7.2/antlr4-4.7.2-complete.jar
 	https://repo.maven.apache.org/maven2/org/antlr/ST4/4.0.8/ST4-4.0.8.jar
@@ -74,10 +73,10 @@ REQUIRED_USE="amd64? ( cpu_flags_x86_sse2 )"
 PATCHES=(
 	"${FILESDIR}"/${SLOT}/disable-buildSrc-tests.patch
 	"${FILESDIR}"/${SLOT}/glibc-compatibility.patch
-	"${FILESDIR}"/${SLOT}/respect-user-cflags.patch
+#	"${FILESDIR}"/${SLOT}/respect-user-cflags.patch
 	"${FILESDIR}"/${SLOT}/use-system-swt-jar.patch
-	"${FILESDIR}"/${SLOT}/wno-error.patch
-	"${FILESDIR}"/${SLOT}/don-t-force-msse.patch
+#	"${FILESDIR}"/${SLOT}/wno-error.patch
+#	"${FILESDIR}"/${SLOT}/don-t-force-msse.patch
 	"${FILESDIR}"/${SLOT}/disable-architecture-verification.patch
 	#"${FILESDIR}/${SLOT}/${PV}-version.patch"
 )
